@@ -1,4 +1,4 @@
-// ✅ Changed base URL to include "/api"
+
 const BASE_URL = "http://localhost:5001/api";
 
 export async function checkResume(formData) {
@@ -10,7 +10,6 @@ export async function checkResume(formData) {
 }
 
 export async function fetchJobs() {
-  // ✅ Now correctly fetches from http://localhost:5001/api/jobs
   const res = await fetch(`${BASE_URL}/jobs`);
   return res.json();
 }
