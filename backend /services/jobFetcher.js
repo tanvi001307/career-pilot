@@ -1,21 +1,4 @@
-// export async function fetchJobs() {
-//   return [
-//     {
-//       id: 1,
-//       role: "Software Engineering Intern",
-//       company: "Google",
-//       location: "India",
-//       link: "https://careers.google.com",
-//     },
-//     {
-//       id: 2,
-//       role: "Frontend Intern",
-//       company: "Flipkart",
-//       location: "Bangalore",
-//       link: "https://www.flipkartcareers.com",
-//     },
-//   ];
-// }
+
 import fetch from "node-fetch";
 
 const REMOTIVE_API = "https://remotive.com/api/remote-jobs";
@@ -40,7 +23,7 @@ export async function fetchJobs() {
       return [];
     }
 
-    // Rank jobs instead of hard filtering
+    
     const rankedJobs = data.jobs.map(job => {
       const title = job.title.toLowerCase();
       const score = STUDENT_KEYWORDS.reduce(
@@ -51,10 +34,10 @@ export async function fetchJobs() {
       return { job, score };
     });
 
-    // Sort by relevance score
+    
     rankedJobs.sort((a, b) => b.score - a.score);
 
-    // Take top results (even if score = 0)
+    
     const finalJobs = rankedJobs.slice(0, 15).map(({ job }) => ({
       title: job.title,
       company: job.company_name,
