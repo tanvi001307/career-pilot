@@ -1,30 +1,9 @@
-// import { useState } from "react";
-// import { getPlanner } from "../api";
-// import StepTimeline from "../components/StepTimeline";
-
-// export default function Planner() {
-//   const [steps, setSteps] = useState([]);
-
-//   async function generatePlan() {
-//     const res = await getPlanner({ level: "beginner", goal: "internship" });
-//     setSteps(res.steps);
-//   }
-
-//   return (
-//     <div>
-//       <h2>Career Planner</h2>
-//       <button onClick={generatePlan}>Generate Plan</button>
-//       <StepTimeline steps={steps} />
-//     </div>
-//   );
-// }
 
 import { useState } from "react";
 import { getPlanner } from "../api";
-import "./Planner.css"; // Make sure to create this CSS file below!
+import "./Planner.css";
 
 export default function Planner() {
-  // We now capture detailed user context
   const [formData, setFormData] = useState({
     level: "Beginner",
     goal: "Frontend Intern",
@@ -36,14 +15,14 @@ export default function Planner() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Handles typing in the input boxes
+
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
   async function generatePlan() {
     setLoading(true);
-    setRoadmap([]); // Clear previous results
+    setRoadmap([]); 
     setError("");
 
     try {
@@ -69,7 +48,6 @@ export default function Planner() {
     <div className="planner-container">
       <h2 className="section-title">Career Roadmap Generator 🗺️</h2>
       
-      {/* 1. The Input Form */}
       <div className="planner-form card">
         <div className="form-group">
           <label>Current Level</label>
@@ -116,7 +94,6 @@ export default function Planner() {
         {error && <p className="error-msg">{error}</p>}
       </div>
 
-      {/* 2. The Results Display */}
       <div className="roadmap-list">
         {roadmap.map((step, index) => (
           <div key={index} className="roadmap-card">
@@ -130,7 +107,6 @@ export default function Planner() {
               </ul>
             )}
 
-            {/* Handle resources if they exist */}
             {step.resources && (
               <div className="step-res">
                 <strong>Recommended Resource:</strong> {step.resources}
