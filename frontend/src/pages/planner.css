@@ -1,11 +1,11 @@
-/* frontend/src/pages/Planner.css */
+
 
 .planner-container {
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* The Input Card */
+
 .planner-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -45,7 +45,7 @@
   text-align: center;
 }
 
-/* The Timeline Results */
+
 .roadmap-card {
   background: rgba(17, 24, 39, 0.8);
   border-left: 4px solid #3b82f6;
