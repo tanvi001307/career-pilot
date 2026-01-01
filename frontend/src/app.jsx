@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 
-// Assuming these files are in the same folder as App.jsx. 
-// If they are in a 'components' folder, change path to "./components/ResumeCheck" etc.
 import ResumeCheck from "./pages/ResumeCheck"; 
 import Opportunities from "./pages/Opportunities"; 
 import Planner from "./pages/Planner";
