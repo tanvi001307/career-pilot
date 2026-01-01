@@ -1,6 +1,4 @@
-/* =====================
-   Global Reset & Theme
-===================== */
+
 
 * {
   box-sizing: border-box;
@@ -14,7 +12,7 @@ body {
   color: #0f172a;
 }
 
-/* Center app on laptop */
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -23,9 +21,7 @@ body {
   padding: 3rem 1.5rem;
 }
 
-/* =====================
-   App Shell
-===================== */
+
 
 .app-shell {
   width: 100%;
@@ -37,9 +33,7 @@ body {
   border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-/* =====================
-   Header / Navigation
-===================== */
+
 
 .app-header {
   display: flex;
@@ -59,7 +53,7 @@ body {
   color: #475569;
 }
 
-/* Tabs */
+
 .app-tabs {
   display: flex;
   gap: 0.6rem;
@@ -87,9 +81,7 @@ body {
   border-color: #14b8a6;
 }
 
-/* =====================
-   Cards
-===================== */
+
 
 .card {
   background: #ffffff;
@@ -99,7 +91,7 @@ body {
   margin-bottom: 1.25rem;
 }
 
-/* Section titles */
+
 .section-title {
   font-size: 1.05rem;
   font-weight: 600;
@@ -107,9 +99,6 @@ body {
   color: #0f766e;
 }
 
-/* =====================
-   Forms
-===================== */
 
 label {
   display: block;
@@ -145,9 +134,7 @@ textarea {
   resize: vertical;
 }
 
-/* =====================
-   Buttons
-===================== */
+
 
 button {
   border: none;
@@ -174,9 +161,6 @@ button:active {
   box-shadow: none;
 }
 
-/* =====================
-   ATS Score (VISIBLE!)
-===================== */
 
 .ats-score {
   font-size: 2.4rem;
@@ -201,9 +185,7 @@ button:active {
   color: #475569;
 }
 
-/* =====================
-   Jobs Grid
-===================== */
+
 
 .jobs-grid {
   display: grid;
@@ -243,18 +225,13 @@ button:active {
   text-decoration: underline;
 }
 
-/* =====================
-   Utility
-===================== */
 
 .muted {
   color: #64748b;
   font-size: 0.85rem;
 }
 
-/* =====================
-   Laptop / Desktop polish
-===================== */
+
 
 @media (min-width: 1024px) {
   .app-shell {
