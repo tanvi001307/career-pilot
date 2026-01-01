@@ -110,6 +110,6 @@ The backend exposes the following RESTful API endpoints:
 
 Feel free to fork this repository and submit pull requests for new features or bug fixes.
 
-## 📄 License
 
-This project is open-source and available under the MIT License.
+
+##This project is open-source 
