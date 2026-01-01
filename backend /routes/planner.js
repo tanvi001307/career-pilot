@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
   const { goal, level, skills, timeline } = req.body;
 
   try {
-    // Logic to decide unit
+
     let timeUnit = "Weeks";
     if (timeline.includes("6 months") || timeline.includes("Year")) {
       timeUnit = "Months";
@@ -43,8 +43,7 @@ router.post("/", async (req, res) => {
 
     const aiResponse = await getGuidance(prompt);
     
-    // 🛡️ CRASH PROOF CLEANING LOGIC 🛡️
-    // 1. Find the first '{' and the last '}'
+    
     const startIndex = aiResponse.indexOf('{');
     const endIndex = aiResponse.lastIndexOf('}');
 
@@ -52,10 +51,10 @@ router.post("/", async (req, res) => {
       throw new Error("AI did not return a valid JSON object");
     }
 
-    // 2. Extract exactly the JSON part, ignoring text before/after
+    
     const cleanJson = aiResponse.substring(startIndex, endIndex + 1);
 
-    // 3. Parse it
+ 
     const data = JSON.parse(cleanJson);
 
     // Save to DB
@@ -70,7 +69,6 @@ router.post("/", async (req, res) => {
 
   } catch (err) {
     console.error("AI Error:", err.message);
-    // console.log("Failed Response was:", aiResponse); // Uncomment to debug if needed
     res.status(500).json({ error: "Failed to generate plan. Please try again." });
   }
 });
