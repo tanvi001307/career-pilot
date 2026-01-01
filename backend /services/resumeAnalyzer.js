@@ -1,4 +1,3 @@
-// backend/services/resumeAnalyzer.js
 
 export function analyzeResumeText(text) {
   if (!text || text.trim().length < 50) {
