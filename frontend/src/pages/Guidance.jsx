@@ -1,5 +1,4 @@
 import { useState } from "react";
-// ✅ FIXED IMPORT: Uses "./api" because both files are in the same folder
 import { getGuidance } from "../api"; 
 
 export default function Guidance() {
@@ -11,7 +10,7 @@ export default function Guidance() {
     if (!prompt) return;
     
     setLoading(true);
-    setResponse(""); // Clear previous answer
+    setResponse(""); 
     
     try {
       // 1. Sends text to api.js -> server.js -> Groq AI
